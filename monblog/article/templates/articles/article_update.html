@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}mise à d'article{% endblock %}
+
+{% block content %}
+    <form method="POST">
+    {% csrf_token %}
+    {{ form_in_template }}
+
+    <button type="submit">Mettre à jour</button>
+    </form>
+{% endblock %}

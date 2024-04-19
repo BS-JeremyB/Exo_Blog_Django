@@ -2,5 +2,13 @@
 {% block title %}Accueil{% endblock %}
 
 {% block content %}
-<h1>Bienvenue sur mon site d'actualité</h1>
+<form method="GET">
+    <input type="text" name="query_filter">
+    <button type="submit">Rechercher </button>
+</form>
+    {% for article in articles_in_template %}
+        <a href="{%  url 'article_detail' id=article.id %}"><h2>{{article.titre}}</h2></a>
+        <h3>par {{article.auteur}}</h3>
+        <hr>
+    {% endfor %}
 {% endblock %}

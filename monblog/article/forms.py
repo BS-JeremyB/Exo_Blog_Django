@@ -16,3 +16,14 @@ class Formulaire_creation_article(ModelForm):
                 'max_length': "Ce titre dépasse la taille max"
             }
         }
+
+
+class Formulaire_changer_article(ModelForm):
+    class Meta:
+        model = Article
+        fields = '__all__'
+        error_message = {
+            'titre': {
+                'max_length': "Ce titre dépasse la taille max"
+            }
+        }

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+
+    <h2>{{article_in_template.titre}}</h2>
+    <hr>
+    <p>{{article_in_template.contenu}}</p>
+    <hr>
+    <p>par {{article_in_template.auteur}}</p>
+    <hr>
+    <a href="{% url 'article_delete' id=article_in_template.id %}">Supprimer<a><br>
+    <a href="{% url 'article_update' id=article_in_template.id %}">Mettre à jour<a>
+
+{% endblock %}
+
+
