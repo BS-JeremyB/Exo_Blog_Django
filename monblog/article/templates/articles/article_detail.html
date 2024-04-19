@@ -9,8 +9,8 @@
     <hr>
     <p>par {{article_in_template.auteur}}</p>
     <hr>
-    <a href="{% url 'article_delete' id=article_in_template.id %}">Supprimer<a><br>
-    <a href="{% url 'article_update' id=article_in_template.id %}">Mettre à jour<a>
+    <a class="btn btn-danger" href="{% url 'article_delete' id=article_in_template.id %}">Supprimer<a>
+    <a class="btn btn-primary" href="{% url 'article_update' id=article_in_template.id %}">Mettre à jour<a>
 
 {% endblock %}
 

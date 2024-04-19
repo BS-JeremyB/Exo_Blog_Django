@@ -1,0 +1,7 @@
+nav {
+    background-color: rgb(8, 8, 43);
+}
+
+nav > a{
+    color : white;
+}
