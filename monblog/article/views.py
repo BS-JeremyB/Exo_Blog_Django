@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from .forms import *
 from .models import Article
@@ -24,7 +25,12 @@ def article_detail(request, id):
     article = Article.objects.get(id=id)
     return render(request, 'articles/article_detail.html', {'article_in_template': article})
 
+
 def article_create(request):
+    if not request.user.is_authenticated:
+        return redirect('signin')
+
+
     if request.method == 'POST':
         form = Formulaire_creation_article(request.POST)
         if(form.is_valid()):
